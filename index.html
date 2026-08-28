@@ -5,236 +5,361 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandy Kurnia Ramadhan - Web Developer & Mobile Developer | Portofolio Website</title>
+    <title>Portfolio Sandy Kurnia Ramadhan | Web & Mobile Developer</title>
+    <meta name="description" content="Sandy Kurnia Ramadhan is a Web & Mobile Developer who builds accessible, inclusive products and digital experiences for the web and mobile.">
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons (brand icons) -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="icon" type="image/png" href="dist/Logodevelopment.png">
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo">Portofolio</a>
+    <!-- ===== HEADER / NAV ===== -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">Portfolio</a>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
+            <nav class="navbar" id="navbar">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
+            <a href="mailto:sandybkng@gmail.com" class="nav-cta">Hire Me</a>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hallo👋, I am</h3>
-            <h2>Sandy Kurnia Ramadhan</h2>
-            <p> I am a web and mobile developer passionate about creating beautiful digital solutions,
-                functional and impactful. I enjoy helping individuals and organizations who want to bring about change
-                positive to the world through technology.
-            </p>
-            <p>Currently, I am a student at the Caltex Riau Polytechnic, where I am studying methods
-                build responsive, intuitive and efficient websites and mobile applications using technology
-                such as HTML, CSS, JavaScript, and Android mobile applications using programming languages such as
-                Kotlin</p>
-
-            <div class="social-media">
-                <a href="https://www.facebook.com/sandi.kurniaramadhan.5"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/sandykurniia_/"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/"><i
-                        class='bx bxl-linkedin'></i></a>
-            </div>
-
-            <!-- <a href="https://drive.google.com/file/d/1lydJhCpx2vKI3VTuIFP0UgIP9VcRodQX/view?usp=sharing"
-                class="btn">Download CV</a> -->
-        </div>
-
-        <div class="profession-container">
-            <!-- <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Web Developer</h3>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-eyebrow">Web &amp; Mobile Developer</span>
+                <h1 class="hero-title">Sandy Kurnia<br>Ramadhan.</h1>
+                <p class="hero-description">
+                    I build accessible, inclusive products and digital experiences for the web and mobile.
+                    Passionate about creating seamless user interfaces and robust architectures.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                    <a href="dist/CV_Sandy_Kurnia_Ramadhan.pdf" download="CV_Sandy_Kurnia_Ramadhan.pdf" class="btn btn-outline">Download CV</a>
                 </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bx-mobile'></i>
-                    <h3>Mobile Developer</h3>
-                </div>
-
-                <div class="circle"></div>
-            </div> -->
-
-            <div class="overlay"></div>
-        </div>
-
-        <div class="home-img">
-            <img src="dist/Foto.jpg" alt="">
-        </div>
-    </section>
-
-    <!-- about section design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="dist/foto sandy.jpg" alt="">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>
-                Hello! Welcome to my website,
-                an enthusiastic web developer who enjoys learning new technologies and solving various things
-                problem with code.
-            </h3>
-            <p>
-                This website is my personal blog, where I write about various topics around development
-                websites that I am interested in and that inspire me.
-            </p>
-            <p>
-               Thank you for visiting my website and taking the time to get to know me better.
-                I hope you enjoy reading my posts and find useful information in
-                inside.
-                If you want to keep up to date with my latest articles, please subscribe to the newsletter I send
-                every week, contains trends and tips about the world of web development.
-                If you have any feedback or suggestions, please feel free to contact me, I would be very happy
-                hear it!
-            </p>
-
-
-        </div>
-    </section>
-
-    <!-- services section design -->
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Skills</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Web Developer</h3>
-                <p>As a Web Developer, I have skills in building responsive websites
-                    optimized for various devices. I master HTML, CSS and JavaScript for development
-                    frontend, and have experience using frameworks such as Laravel. On the side
-                    backend, I am competent in using databases such as
-                    MySQL. I focus on creating fast, user-friendly, and scalable web applications.</p>
             </div>
-            <div class="services-box">
-                <i class='bx bx-mobile-alt'></i>
-                <h3>Mobile Developer</h3>
-                <p>As a Mobile Developer, I develop mobile applications for Android using Kotlin.
-                    cross-platform with a consistent user experience. I confirmed the application
-                    The mobile that I made has good performance, an attractive interface, and good integration
-                    seamlessly with various backend services and APIs.</p>
-
+            <div class="hero-image">
+                <img src="dist/Foto.jpg" alt="Sandy Kurnia Ramadhan">
             </div>
         </div>
     </section>
 
-    <!-- portfolio section design -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Project</span></h2>
-
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="dist/SCC.png" alt="Sumatera Career Center">
-
-                <div class="portfolio-layer">
-                    <h4>SCC</h4>
-                    <p>It is a project application in Java language where we can log in and search for vacancies
-                        work in Sumatra</p>
-                    <a href="https://github.com/SANDYKURNIIA/SumateraCareerCenter"><i
-                            class='bx bx-link-external'></i></a>
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrap">
+                    <img src="dist/foto_sandy.jpg" alt="Sandy Kurnia Ramadhan" class="about-photo">
+                    <div class="about-badge">
+                        <span class="badge-num">3+</span>
+                        <span class="badge-label">Years of<br>Experience</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-eyebrow">About Me</span>
+                    <h2 class="section-title">Crafting digital<br>experiences with code.</h2>
+                    <p class="about-text">
+                        Hello! I'm Sandy, an enthusiastic web and mobile developer currently studying at
+                        Caltex Riau Polytechnic. I'm passionate about building fast, beautiful, and
+                        accessible applications that solve real problems.
+                    </p>
+                    <p class="about-text">
+                        I specialize in frontend development with a keen eye for design, and I love
+                        collaborating on projects that have a meaningful impact on users' lives.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">5+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Dedication</span>
+                        </div>
+                    </div>
+                    <div class="about-links">
+                        <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank" class="social-link">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/SANDYKURNIIA" target="_blank" class="social-link">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sandykurniia_/" target="_blank" class="social-link">
+                            <i class="bx bxl-instagram-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-box">
-                <img src="dist/Reservasi.png" alt="Reservasi Hotel">
-
-                <div class="portfolio-layer">
-                    <h4>Widjaya Hotel</h4>
-                    <p>It is a website with native PHP language where we can reserve hotel rooms and
-                        view hotel information</p>
-                    <a href="https://github.com/SANDYKURNIIA/ReservasiHotel"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="dist/Zona Bakat Apps.png" alt="">
-
-                <div class="portfolio-layer">
-                    <h4>Zona Bakat Apps</h4>
-                    <p>It is an application project in the Kotlin language where we can choose our course
-                        want</p>
-                    <a href="https://github.com/SANDYKURNIIA/ZonaBakatApps"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="dist/Bunga Mekar.jpeg" alt="">
-
-                <div class="portfolio-layer">
-                    <h4>Flowers</h4>
-                    <p>Is a website that can display flowers</p>
-                    <a href="https://github.com/SANDYKURNIIA/Flowers"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
+        </div>
     </section>
 
-
-
-    <!-- contact section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form id="contactForm" action="https://formspree.io/f/xanbvelg" method="post">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Skills</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="input-box">
-                <input type="number" name="mobile" placeholder="Mobile Number [+62]" required>
-                <input type="text" name="subject" placeholder="Email Subject" required>
-            </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
 
-        <p id="message"></p>
+            <div class="skills-grid reveal-stagger">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i data-lucide="monitor"></i>
+                    </div>
+                    <h3 class="skill-title">Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Larravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3 class="skill-title">Mobile Development</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Android</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="projects-header">
+                <div>
+                    <h2 class="section-title">Selected Work</h2>
+                    <div class="section-line"></div>
+                </div>
+                <a href="https://github.com/SANDYKURNIIA" target="_blank" class="view-all">
+                    View All Projects <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="projects-grid reveal-stagger">
+                <!-- Project 1 -->
+                <article class="project-card featured">
+                    <div class="project-img-wrap">
+                        <img src="dist/SCC.png" alt="SCC Dashboard" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/SANDYKURNIIA/SumateraCareerCenter" target="_blank" class="project-link">
+                                <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="ptag ptag-web">Web App</span>
+                            <span class="ptag">Dashboard</span>
+                        </div>
+                        <h3 class="project-title">SCC Dashboard</h3>
+                        <p class="project-desc">
+                            A comprehensive management dashboard built with React and Tailwind CSS,
+                            featuring complex data visualization and real-time...
+                        </p>
+                        <a href="https://github.com/SANDYKURNIIA/SumateraCareerCenter" target="_blank" class="case-link">
+                            View Case Study <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card featured">
+                    <div class="project-img-wrap">
+                        <img src="dist/Zona_Bakat_Apps.png" alt="Zona Bakat Mobile App" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/SANDYKURNIIA/ZonaBakatApps" target="_blank" class="project-link">
+                                <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="ptag ptag-mobile">Mobile App</span>
+                            <span class="ptag">Kotlin</span>
+                        </div>
+                        <h3 class="project-title">Zona Bakat Apps</h3>
+                        <p class="project-desc">
+                            A cross-platform mobile application offering intuitive course selection
+                            flows, engaging UI, and personalized learning insights.
+                        </p>
+                        <a href="https://github.com/SANDYKURNIIA/ZonaBakatApps" target="_blank" class="case-link">
+                            View Case Study <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-img-wrap">
+                        <img src="dist/Reservasi.png" alt="Widjaya Hotel Reservation" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/SANDYKURNIIA/ReservasiHotel" target="_blank" class="project-link">
+                                <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="ptag ptag-web">Web App</span>
+                            <span class="ptag">PHP</span>
+                        </div>
+                        <h3 class="project-title">Widjaya Hotel</h3>
+                        <p class="project-desc">
+                            Hotel reservation platform with real-time room availability and booking management.
+                        </p>
+                        <a href="https://github.com/SANDYKURNIIA/ReservasiHotel" target="_blank" class="case-link">
+                            View Case Study <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-img-wrap">
+                        <img src="dist/Bunga_Mekar.jpeg" alt="Flowers Website" class="project-img">
+                        <div class="project-overlay">
+                            <a href="https://github.com/SANDYKURNIIA/Flowers" target="_blank" class="project-link">
+                                <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="ptag ptag-web">Web App</span>
+                            <span class="ptag">HTML/CSS</span>
+                        </div>
+                        <h3 class="project-title">Bunga Mekar</h3>
+                        <p class="project-desc">
+                            A beautifully designed flower display website with elegant UI and smooth animations.
+                        </p>
+                        <a href="https://github.com/SANDYKURNIIA/Flowers" target="_blank" class="case-link">
+                            View Case Study <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 
-    <!-- footer design -->
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid reveal">
+                <div class="contact-info">
+                    <span class="section-eyebrow">Get In Touch</span>
+                    <h2 class="section-title">Let's work<br>together.</h2>
+                    <p class="contact-text">
+                        Have a project in mind or just want to say hello?
+                        I'd love to hear from you. Send me a message and
+                        I'll get back to you as soon as possible.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>sandybkng@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Pekanbaru, Riau, Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank" class="social-link">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/SANDYKURNIIA" target="_blank" class="social-link">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sandykurniia_/" target="_blank" class="social-link">
+                            <i class="bx bxl-instagram-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap">
+                    <form id="contactForm" action="https://formspree.io/f/xanbvelg" method="post" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Sandy Kurnia" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message <i data-lucide="send" class="btn-icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2025 | All Rights Reserved.</p>
-        </div>
-
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        <div class="footer-container">
+            <span class="footer-logo">Portfolio</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/SANDYKURNIIA" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/sandykurniia_/" target="_blank">Instagram</a>
+            </div>
+            <p class="footer-copy">&copy; 2024 Sandy Kurnia Ramadhan. Built with Modern Authority.</p>
         </div>
     </footer>
 
-
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- custom js -->
     <script src="script.js"></script>
 </body>
-
 </html>

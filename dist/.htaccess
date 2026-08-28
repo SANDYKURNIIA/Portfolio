@@ -1,0 +1,18 @@
+﻿# =============================================
+#  dist/.htaccess - Sandy Kurnia Ramadhan
+# =============================================
+
+# Matikan directory listing
+Options -Indexes
+
+# Paksa file PDF langsung terdownload (bukan dibuka di browser)
+<FilesMatch "\.pdf$">
+    ForceType application/octet-stream
+    Header set Content-Disposition "attachment"
+</FilesMatch>
+
+# Cegah akses langsung ke file .htaccess itu sendiri
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+</Files>
