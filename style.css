@@ -102,6 +102,7 @@ body {
     font-synthesis-weight: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 img {
@@ -234,7 +235,6 @@ ul {
     align-items: baseline;
     gap: 0.75rem;
     min-width: 0;
-    /* Padding + matching negative margin: a 40px hit area without moving ink. */
     padding: 0.6rem 0.35rem;
     margin: -0.6rem -0.35rem;
 }
@@ -330,8 +330,6 @@ ul {
     position: relative;
 }
 
-/* Both bars are centred on the box; the closed gap is a pure translate so the
-   open state can drop straight to a rotation and cross exactly in the middle. */
 .navtoggle span {
     position: absolute;
     top: 50%;
@@ -481,38 +479,50 @@ ul {
     color: var(--ink);
 }
 
-/* ------------------------------------------------------ spec strip ---- */
+/* -------------------------------------------------- spec table (RAPI) ---- */
 
-.spec {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
+.table-responsive {
+    width: 100%;
     margin-top: clamp(3rem, 6vw, 5rem);
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--rule);
 }
 
-.spec__row {
-    padding: 1rem 1.5rem 1.15rem 0;
-    border-right: 1px solid var(--rule-soft);
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
 }
 
-.spec__row:last-child {
-    border-right: 0;
+.spec-table tr {
+    border-bottom: 1px solid var(--rule-soft);
 }
 
-.spec__row dt {
+.spec-table tr:last-child {
+    border-bottom: none;
+}
+
+.spec-table th,
+.spec-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: top;
+}
+
+.spec-table th {
+    width: 22%;
     font-family: var(--mono);
     font-size: 0.6875rem;
+    font-weight: 400;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--ink-3);
-    margin-bottom: 0.35rem;
+    border-right: 1px solid var(--rule-soft);
+    padding-left: 0;
 }
 
-.spec__row dd {
-    display: grid;
-    gap: 0.3rem;
+.spec-table td {
+    width: 78%;
+    padding-right: 0;
 }
 
 .spec__value {
@@ -521,13 +531,16 @@ ul {
     line-height: 1.3;
     letter-spacing: -0.008em;
     font-variant-numeric: tabular-nums;
-    text-wrap: balance;
+    color: var(--ink);
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .spec__meta {
     font-size: 0.6875rem;
     line-height: 1.35;
     color: var(--ink-3);
+    display: inline-block;
 }
 
 /* ------------------------------------------------------- section head -- */
@@ -739,16 +752,9 @@ ul {
     opacity: 1;
 }
 
-.entry__thumb--tall img {
-    object-position: 50% 0;
-    object-fit: cover;
-}
-
-/* mobile screenshot: keep it phone-shaped, sitting on a tinted plate */
 .entry__thumb--tall {
     aspect-ratio: 16 / 10;
-    background:
-        linear-gradient(var(--paper-3), var(--paper-3)) padding-box;
+    background: linear-gradient(var(--paper-3), var(--paper-3)) padding-box;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -1194,9 +1200,6 @@ ul {
 
 /* --------------------------------------------------------------- depth -- */
 
-/* The hero plate is a real box in 3D space: a frame lifted off a paper card,
-   a lit edge, a cast shadow on the page and a glare that follows the pointer.
-   Pointer tilt writes --rx/--ry/--rz/--gx/--gy on .plate. */
 .plate {
     position: relative;
     perspective: 1100px;
@@ -1209,7 +1212,6 @@ ul {
     --gy: 40%;
 }
 
-/* Second card behind the frame, parked deeper on the z axis. */
 .plate::before {
     content: '';
     position: absolute;
@@ -1220,7 +1222,6 @@ ul {
     pointer-events: none;
 }
 
-/* Ground shadow: stays on the page plane, softens as the frame lifts. */
 .plate::after {
     content: '';
     position: absolute;
@@ -1250,7 +1251,6 @@ ul {
     transition: transform 700ms var(--ease), box-shadow 700ms var(--ease);
 }
 
-/* Lit edge: the frame reads as a 22px-thick object once it turns. */
 .plate__frame::before {
     content: '';
     position: absolute;
@@ -1262,7 +1262,6 @@ ul {
     z-index: 2;
 }
 
-/* Glare rides above the photograph and tracks the pointer. */
 .plate__frame::after {
     content: '';
     position: absolute;
@@ -1285,9 +1284,6 @@ ul {
     opacity: 1;
 }
 
-
-
-/* Ledger thumbnails lift out of the page plane on approach. */
 .entry__thumb {
     transform-origin: 50% 50%;
     transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
@@ -1305,10 +1301,8 @@ ul {
     box-shadow: 18px 24px 46px -32px rgba(20, 20, 15, 0.55);
 }
 
-/* Scroll depth: the screenshot drifts inside its frame as the row passes. */
 @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-
         .entry__thumb img {
             scale: 1.08;
             animation: plate-drift linear both;
@@ -1325,26 +1319,15 @@ ul {
 }
 
 @keyframes plate-drift {
-    from {
-        translate: 0 3.5%;
-    }
-
-    to {
-        translate: 0 -3.5%;
-    }
+    from { translate: 0 3.5%; }
+    to { translate: 0 -3.5%; }
 }
 
 @keyframes plate-drift-slow {
-    from {
-        translate: 0 1.6%;
-    }
-
-    to {
-        translate: 0 -1.6%;
-    }
+    from { translate: 0 1.6%; }
+    to { translate: 0 -1.6%; }
 }
 
-/* Scroll depth: blocks sit pushed back, then settle into the page. */
 .reveal {
     opacity: 0;
     transform: translate3d(0, 1.75rem, 0) rotateX(6deg) scale(0.99);
@@ -1666,8 +1649,6 @@ ul {
 
 /* ---------------------------------------------------------- responsive -- */
 
-/* Tablet keeps two columns: the headline still has room on the left, and the
-   portrait drops to the baseline of the text instead of leaving a dead column. */
 @media (min-width: 781px) and (max-width: 1000px) {
     .opening__grid {
         grid-template-columns: minmax(0, 1fr) 15rem;
@@ -1686,18 +1667,6 @@ ul {
 
     .plate__frame img {
         aspect-ratio: 4 / 5;
-    }
-
-    .spec {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .spec__row:nth-child(2) {
-        border-right: 0;
-    }
-
-    .spec__row:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--rule-soft);
     }
 
     .entry__link {
@@ -1781,18 +1750,26 @@ ul {
         box-shadow: 0 24px 40px -30px rgba(20, 20, 15, 0.55);
     }
 
-    .spec {
-        grid-template-columns: minmax(0, 1fr);
+    /* Penyesuaian Tabel di Layar HP */
+    .spec-table th,
+    .spec-table td {
+        display: block;
+        width: 100%;
+        padding: 0.35rem 0;
     }
 
-    .spec__row {
-        border-right: 0;
-        border-bottom: 1px solid var(--rule-soft);
-        padding: 0.85rem 0;
+    .spec-table tr {
+        padding-block: 0.6rem;
+        display: block;
     }
 
-    .spec__row:last-child {
-        border-bottom: 0;
+    .spec-table th {
+        border-right: none;
+        padding-bottom: 0.15rem;
+    }
+
+    .spec-table td {
+        padding-top: 0;
     }
 
     .award {

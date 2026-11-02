@@ -75,36 +75,42 @@
                     </figure>
                 </div>
 
-                <dl class="spec">
-                    <div class="spec__row">
-                        <dt>Jaringan</dt>
-                        <dd>
-                            <span class="spec__value">MTCNA</span>
-                            <span class="spec__meta mono">MikroTik · 2026</span>
-                        </dd>
-                    </div>
-                    <div class="spec__row">
-                        <dt>Keamanan</dt>
-                        <dd>
-                            <span class="spec__value">Juara II Cyber CTF</span>
-                            <span class="spec__meta mono">Politeknik Caltex Riau · 2026</span>
-                        </dd>
-                    </div>
-                    <div class="spec__row">
-                        <dt>Perangkat lunak</dt>
-                        <dd>
-                            <span class="spec__value">Laravel · Kotlin · Java</span>
-                            <span class="spec__meta mono">Web · Android · Desktop</span>
-                        </dd>
-                    </div>
-                    <div class="spec__row">
-                        <dt>Pendidikan</dt>
-                        <dd>
-                            <span class="spec__value">Politeknik Caltex Riau</span>
-                            <span class="spec__meta mono">D4 Teknologi Rekayasa Komputer · IPK 3.52</span>
-                        </dd>
-                    </div>
-                </dl>
+                <!-- DIUBAH: Menggunakan Tabel Rapi & Semantik -->
+                <div class="table-responsive">
+                    <table class="spec-table">
+                        <tbody>
+                            <tr>
+                                <th>Jaringan</th>
+                                <td>
+                                    <span class="spec__value">MTCNA</span>
+                                    <span class="spec__meta mono">MikroTik · 2026</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Keamanan</th>
+                                <td>
+                                    <span class="spec__value">Juara II Cyber CTF</span>
+                                    <span class="spec__meta mono">Politeknik Caltex Riau · 2026</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Perangkat lunak</th>
+                                <td>
+                                    <span class="spec__value">Laravel · Kotlin · Java</span>
+                                    <span class="spec__meta mono">Web · Android · Desktop</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Pendidikan</th>
+                                <td>
+                                    <span class="spec__value">Politeknik Caltex Riau</span>
+                                    <span class="spec__meta mono">D4 Teknologi Rekayasa Komputer · IPK 3.52</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </section>
 
@@ -117,16 +123,11 @@
                 </div>
 
                 <div class="filters" role="group" aria-label="Saring proyek berdasarkan platform">
-                    <button class="chip is-on" data-filter="semua" aria-pressed="true">Semua <span
-                            class="chip__n">6</span></button>
-                    <button class="chip" data-filter="web" aria-pressed="false">Web <span
-                            class="chip__n">3</span></button>
-                    <button class="chip" data-filter="mobile" aria-pressed="false">Mobile <span
-                            class="chip__n">1</span></button>
-                    <button class="chip" data-filter="desktop" aria-pressed="false">Desktop <span
-                            class="chip__n">1</span></button>
-                    <button class="chip" data-filter="eksperimen" aria-pressed="false">Eksperimen <span
-                            class="chip__n">1</span></button>
+                    <button class="chip is-on" data-filter="semua" aria-pressed="true">Semua <span class="chip__n">6</span></button>
+                    <button class="chip" data-filter="web" aria-pressed="false">Web <span class="chip__n">3</span></button>
+                    <button class="chip" data-filter="mobile" aria-pressed="false">Mobile <span class="chip__n">1</span></button>
+                    <button class="chip" data-filter="desktop" aria-pressed="false">Desktop <span class="chip__n">1</span></button>
+                    <button class="chip" data-filter="eksperimen" aria-pressed="false">Eksperimen <span class="chip__n">1</span></button>
                 </div>
 
                 <p class="filters__status mono" id="filterStatus" role="status" aria-live="polite"></p>
@@ -145,8 +146,7 @@
                                     Pencatatan keuangan untuk UMKM: dashboard pemasukan dan pengeluaran,
                                     transaksi, kategori, laporan, dan autentikasi pengguna.
                                 </p>
-                                <p class="entry__stack mono">Laravel 11 · PHP 8.4 · MySQL · Blade · Tailwind
-                                </p>
+                                <p class="entry__stack mono">Laravel 11 · PHP 8.4 · MySQL · Blade · Tailwind</p>
                             </div>
                             <div class="entry__thumb">
                                 <img src="dist/cases/finlock-transaksi.png" width="1918" height="1014"
