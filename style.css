@@ -82,11 +82,9 @@
 html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
-    /* One offset only: the sticky masthead plus a breath of air. */
     scroll-padding-top: 5.25rem;
 }
 
-/* The drawer owns scrolling while it is open. */
 html.nav-open,
 html.nav-open body {
     overflow: hidden;
@@ -479,7 +477,7 @@ ul {
     color: var(--ink);
 }
 
-/* -------------------------------------------------- spec table (RAPI) ---- */
+/* -------------------------------------------------- SPEC TABLE (PERBAIKAN) ---- */
 
 .table-responsive {
     width: 100%;
@@ -494,7 +492,12 @@ ul {
     text-align: left;
 }
 
+.spec-table tbody {
+    display: table-row-group;
+}
+
 .spec-table tr {
+    display: table-row;
     border-bottom: 1px solid var(--rule-soft);
 }
 
@@ -504,12 +507,12 @@ ul {
 
 .spec-table th,
 .spec-table td {
-    padding: 1rem 1.25rem;
+    padding: 1.15rem 1.25rem 1.25rem 0;
     vertical-align: top;
 }
 
 .spec-table th {
-    width: 22%;
+    width: 20%;
     font-family: var(--mono);
     font-size: 0.6875rem;
     font-weight: 400;
@@ -521,7 +524,8 @@ ul {
 }
 
 .spec-table td {
-    width: 78%;
+    width: 80%;
+    padding-left: 1.25rem;
     padding-right: 0;
 }
 
@@ -532,15 +536,15 @@ ul {
     letter-spacing: -0.008em;
     font-variant-numeric: tabular-nums;
     color: var(--ink);
-    display: inline-block;
-    margin-right: 0.5rem;
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 .spec__meta {
     font-size: 0.6875rem;
     line-height: 1.35;
     color: var(--ink-3);
-    display: inline-block;
+    display: block;
 }
 
 /* ------------------------------------------------------- section head -- */
@@ -1647,7 +1651,7 @@ ul {
     }
 }
 
-/* ---------------------------------------------------------- responsive -- */
+/* ---------------------------------------------------------- RESPONSIVE ---- */
 
 @media (min-width: 781px) and (max-width: 1000px) {
     .opening__grid {
@@ -1694,11 +1698,19 @@ ul {
         grid-template-columns: minmax(0, 1fr);
     }
 }
-
 @media (max-width: 780px) {
+    /* ------------------------------------------------ Navigasi & Header ---- */
+    .masthead {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--paper);
+    }
+
     .masthead__inner {
         height: 3.75rem;
         gap: 1rem;
+        position: relative;
     }
 
     .mark__name {
@@ -1710,19 +1722,33 @@ ul {
         margin-left: auto;
     }
 
+    /* Menu dropdown terisolasi sempurna di bawah header */
     .nav {
-        position: fixed;
-        inset: 3.75rem 0 auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
         padding: 0.5rem var(--gut) 1.5rem;
         background: var(--paper);
         border-bottom: 1px solid var(--ink);
-        transform: translateY(-102%);
+        transform: translateY(-100%);
+        opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: transform 360ms var(--ease), visibility 0s linear 360ms;
+        transition: transform 300ms var(--ease), opacity 300ms var(--ease), visibility 0s linear 300ms;
+        z-index: 99;
+    }
+
+    .nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: transform 300ms var(--ease), opacity 300ms var(--ease);
+        box-shadow: 0 20px 30px -20px rgba(20, 20, 15, 0.35);
     }
 
     .nav > a {
@@ -1740,38 +1766,107 @@ ul {
         align-self: flex-start;
         border-radius: 99px;
         padding: 0.55rem 1rem !important;
+        display: inline-flex !important;
     }
 
-    .nav.is-open {
-        transform: translateY(0);
-        visibility: visible;
-        pointer-events: auto;
-        transition: transform 360ms var(--ease);
-        box-shadow: 0 24px 40px -30px rgba(20, 20, 15, 0.55);
+    /* ------------------------------------------------ Grid Pembuka & Teks ---- */
+    .opening {
+        padding-top: 2rem;
     }
 
-    /* Penyesuaian Tabel di Layar HP */
+    .opening__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.25rem;
+    }
+
+    .opening__text {
+        width: 100%;
+    }
+
+    .display {
+        font-size: clamp(1.85rem, 7.5vw, 2.65rem);
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+    }
+
+    .opening__lede {
+        max-width: 100%;
+        font-size: 0.975rem;
+        line-height: 1.58;
+    }
+
+    .opening__actions {
+        margin-top: 1.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .opening__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ------------------------------------------------ Foto / Plate Profil ---- */
+    .plate {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0.5rem;
+        perspective: none !important;
+        transform: none !important;
+    }
+
+    .plate::before,
+    .plate::after {
+        display: none !important;
+    }
+
+    .plate__frame {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .plate__frame img {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    /* ------------------------------------------------ Tabel Spesifikasi ---- */
+    .table-responsive {
+        margin-top: 2.5rem;
+    }
+
+    .spec-table,
+    .spec-table tbody,
+    .spec-table tr,
     .spec-table th,
     .spec-table td {
         display: block;
         width: 100%;
-        padding: 0.35rem 0;
     }
 
     .spec-table tr {
-        padding-block: 0.6rem;
-        display: block;
+        border-bottom: 1px solid var(--rule-soft);
+        padding: 0.85rem 0;
+    }
+
+    .spec-table tr:last-child {
+        border-bottom: none;
     }
 
     .spec-table th {
         border-right: none;
-        padding-bottom: 0.15rem;
+        padding: 0 0 0.35rem 0;
     }
 
     .spec-table td {
-        padding-top: 0;
+        padding: 0;
     }
 
+    /* ------------------------------------------------ Elemen Lainnya ---- */
     .award {
         grid-template-columns: minmax(0, 1fr) auto;
         grid-template-areas:
@@ -1850,16 +1945,6 @@ ul {
         flex-direction: row;
         gap: 0.75rem;
         padding-top: 0;
-    }
-
-    .display {
-        font-size: clamp(2.1rem, 9vw, 2.8rem);
-        letter-spacing: -0.028em;
-    }
-
-    .opening__actions .btn {
-        width: 100%;
-        justify-content: center;
     }
 
     .award {
