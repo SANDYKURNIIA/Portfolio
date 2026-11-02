@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finlock — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Finlock: aplikasi pencatatan keuangan UMKM berbasis Laravel 11, PHP 8.4, MySQL, Blade, dan Tailwind CSS.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Finlock
+                </p>
+
+                <h1 class="case__title" id="judul">Finlock</h1>
+
+                <p class="case__lede">
+                    Pencatatan keuangan untuk usaha mikro, kecil, dan menengah. Menggantikan buku catatan
+                    manual dengan dashboard arus kas, transaksi, kategori, dan laporan yang tersimpan
+                    di satu basis data.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2026</dd>
+                    </div>
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>Web</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>Laravel 11 · PHP 8.4</dd>
+                    </div>
+                    <div>
+                        <dt>Data</dt>
+                        <dd>MySQL</dd>
+                    </div>
+                </dl>
+
+                <figure class="case__shot">
+                    <img src="../dist/cases/finlock-transaksi.png" width="1918" height="1014"
+                        alt="Halaman transaksi Finlock: tabel pemasukan dan pengeluaran dengan kolom tanggal, kategori, nominal, dan deskripsi.">
+                    <figcaption class="mono">Halaman transaksi — daftar gabungan pemasukan dan pengeluaran.</figcaption>
+                </figure>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Masalahnya</h2>
+                        <p>
+                            Pemilik usaha kecil biasanya mencatat pemasukan dan pengeluaran di buku atau
+                            spreadsheet tunggal. Begitu transaksi bertambah, tidak ada cara cepat untuk
+                            menjawab pertanyaan dasar: bulan ini untung atau rugi, dan uangnya habis
+                            di kategori apa.
+                        </p>
+                        <p>
+                            Finlock mengambil alih bagian itu: satu tempat untuk mencatat, satu tempat
+                            untuk melihat ringkasannya.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Dashboard yang menjumlahkan total pemasukan, pengeluaran, dan saldo terkini
+                                dari data transaksi yang tersimpan.</li>
+                            <li>CRUD transaksi dengan tanggal, kategori, nominal, dan deskripsi — termasuk
+                                ubah dan hapus.</li>
+                            <li>Kategori kustom agar pengelompokan mengikuti cara tiap usaha bekerja, bukan
+                                daftar bawaan.</li>
+                            <li>Laporan berupa tabel riwayat transaksi terstruktur.</li>
+                            <li>Autentikasi pengguna, sehingga data keuangan satu akun tidak terlihat
+                                oleh akun lain.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>Laravel 11 dengan Blade, bukan SPA.</strong> Aplikasi ini form-heavy dan
+                            dipakai di perangkat rendah spesifikasi. Blade dengan navigasi server-side
+                            lebih ringan daripada memuat bundel JavaScript, dan controller, policy, serta
+                            migrasi Laravel sudah menyediakan struktur untuk autentikasi dan relasi
+                            transaksi–kategori.
+                        </p>
+                        <p>
+                            <strong>Ringkasan dihitung dari transaksi, bukan disimpan terpisah.</strong>
+                            Total di dashboard adalah agregasi langsung atas tabel transaksi. Tidak ada
+                            angka saldo yang bisa melenceng dari riwayatnya.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Bagian tersulit bukan menampilkan data, tetapi memastikan setiap nominal
+                            konsisten: tipe data, format, dan pembulatan. Kesalahan kecil di sini
+                            langsung terlihat sebagai saldo yang salah di dashboard.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono"><a class="lnk" href="https://github.com/SANDYKURNIIA/Finlock-Aplikasi-Pencatatan-Keuangan"
+                            target="_blank" rel="noopener">Repositori di GitHub ↗</a></span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

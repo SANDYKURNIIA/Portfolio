@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batik Sawit Nusantara — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Batik Sawit Nusantara: situs profil rumah batik dengan komponen HTML modular, sudah tayang di Vercel.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Batik
+                    Sawit Nusantara</p>
+
+                <h1 class="case__title" id="judul">Batik Sawit Nusantara</h1>
+
+                <p class="case__lede">
+                    Situs profil untuk rumah batik: halaman beranda, sorotan video proses membatik,
+                    dan bagian dokumentasi. Satu-satunya karya di halaman ini yang bisa langsung
+                    dibuka pengunjung.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2026</dd>
+                    </div>
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>Web</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>HTML · CSS · JavaScript</dd>
+                    </div>
+                    <div>
+                        <dt>Status</dt>
+                        <dd>Tayang di Vercel</dd>
+                    </div>
+                </dl>
+
+                <figure class="case__shot">
+                    <img src="../dist/cases/batik-beranda.png" width="1440" height="1000"
+                        alt="Beranda Batik Sawit Nusantara: judul besar di atas latar biru tua dengan navigasi dan sorotan koleksi."
+                        loading="lazy" decoding="async">
+                    <figcaption class="mono">Beranda — judul, navigasi, dan sorotan koleksi.</figcaption>
+                </figure>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Kebutuhannya</h2>
+                        <p>
+                            Rumah batik perlu halaman yang bisa dibuka calon pembeli dari ponsel, tanpa
+                            biaya server bulanan, dan bisa diperbarui tanpa menyentuh basis data. Isinya
+                            lebih banyak cerita dan foto daripada transaksi.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Beranda dengan judul besar, sorotan koleksi, dan bagian dokumentasi.</li>
+                            <li>Navbar dan footer sebagai berkas komponen terpisah yang dipakai ulang
+                                di setiap halaman.</li>
+                            <li>Sorotan video proses membatik.</li>
+                            <li>Layout responsif dari layar ponsel sampai desktop.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>HTML statis, bukan CMS.</strong> Situs seperti ini berubah beberapa kali
+                            setahun, bukan beberapa kali seminggu. Halaman statis berarti tidak ada
+                            basis data yang harus dirawat, tidak ada celah dari panel admin, dan biaya
+                            hosting nol di Vercel.
+                        </p>
+                        <p>
+                            <strong>Navbar dan footer dipecah jadi komponen.</strong> Dengan banyak halaman
+                            yang berbagi header dan footer yang sama, menyimpan keduanya sebagai berkas
+                            terpisah mencegah menu yang berbeda-beda antar halaman — kesalahan yang mudah
+                            terjadi kalau HTML disalin manual.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Tanpa framework, setiap keputusan struktur terasa langsung. Menjaga satu sumber
+                            untuk navigasi dan footer ternyata memberi manfaat lebih besar daripada
+                            menambah pustaka.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono">
+                        <a class="lnk" href="https://batik-sawit-nusantara.vercel.app" target="_blank"
+                            rel="noopener">Buka situsnya ↗</a>
+                        &nbsp;·&nbsp;
+                        <a class="lnk" href="https://github.com/SANDYKURNIIA/BatikSawitNusantara" target="_blank"
+                            rel="noopener">Repositori ↗</a>
+                    </span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatera Career Center — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Sumatera Career Center: papan lowongan kerja desktop Java dengan XML UI, SQLite/MySQL, dan Material Design.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Sumatera
+                    Career Center</p>
+
+                <h1 class="case__title" id="judul">Sumatera Career Center</h1>
+
+                <p class="case__lede">
+                    Papan lowongan kerja untuk wilayah Sumatera, dibangun sebagai aplikasi desktop Java.
+                    Pencari kerja mencari dan melamar; perusahaan mengunggah lowongan beserta berkas
+                    legalitasnya.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2025</dd>
+                    </div>
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>Desktop</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>Java · XML UI · Material</dd>
+                    </div>
+                    <div>
+                        <dt>Data</dt>
+                        <dd>SQLite / MySQL</dd>
+                    </div>
+                </dl>
+
+                <div class="case__shots">
+                    <figure class="case__shot">
+                        <img src="../dist/cases/scc-beranda.png" width="788" height="524"
+                            alt="Jendela aplikasi Sumatera Career Center dengan daftar lowongan kerja terbaru."
+                            loading="lazy" decoding="async">
+                        <figcaption class="mono">Beranda — daftar lowongan.</figcaption>
+                    </figure>
+                    <figure class="case__shot">
+                        <img src="../dist/cases/scc-lowongan.png" width="946" height="613"
+                            alt="Formulir unggah lowongan kerja pada aplikasi Sumatera Career Center." loading="lazy"
+                            decoding="async">
+                        <figcaption class="mono">Formulir unggah lowongan.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Masalahnya</h2>
+                        <p>
+                            Informasi lowongan di daerah sering tersebar di grup pesan dan pengumuman
+                            kampus. Tidak ada satu tempat yang memisahkan lowongan sah dari yang tidak,
+                            dan tidak ada cara bagi perusahaan untuk menunjukkan bahwa mereka benar-benar
+                            perusahaan.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Login dan registrasi dengan validasi data, memisahkan akun pencari kerja
+                                dan perusahaan.</li>
+                            <li>Beranda berisi ringkasan informasi dan akses cepat ke fitur utama.</li>
+                            <li>Daftar lowongan dengan detail posisi, perusahaan, dan kualifikasi.</li>
+                            <li>Formulir unggah lowongan bagi perusahaan.</li>
+                            <li>Unggah berkas perusahaan sebagai bukti legalitas pemberi lowongan.</li>
+                            <li>Alur admin untuk memeriksa dan mengelola data.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>Java desktop, bukan web.</strong> Proyek ini tugas mata kuliah pemrograman
+                            berorientasi objek; lingkungan yang dinilai adalah aplikasi desktop dengan
+                            antarmuka XML. Batasan itu dijadikan dasar, bukan diakali.
+                        </p>
+                        <p>
+                            <strong>SQLite saat pengembangan, MySQL saat dipakai bersama.</strong> SQLite
+                            membuat aplikasi bisa dijalankan tanpa memasang server basis data lebih dulu,
+                            sementara MySQL dipakai ketika data perlu diakses beberapa pengguna sekaligus.
+                        </p>
+                        <p>
+                            <strong>Berkas legalitas sebagai bagian dari alur.</strong> Setiap lowongan
+                            terhubung ke berkas perusahaan yang mengunggahnya. Ini bukan fitur tambahan —
+                            ini yang membedakan papan lowongan dari daftar tautan.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Memisahkan peran pengguna mengubah desain setiap layar. Satu form unggah
+                            lowongan harus tahu siapa yang sedang masuk, dan apa yang boleh ia lihat.
+                            Menegakkan aturan itu di lapisan data ternyata lebih tahan lama daripada
+                            menyembunyikan tombol.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono"><a class="lnk" href="https://github.com/SANDYKURNIIA/SumateraCareerCenter"
+                            target="_blank" rel="noopener">Repositori di GitHub ↗</a></span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

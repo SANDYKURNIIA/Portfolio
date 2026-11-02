@@ -1,401 +1,532 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Sandy Kurnia Ramadhan | Web & Mobile Developer</title>
+    <title>Sandy Kurnia Ramadhan — Jaringan, Keamanan, Perangkat Lunak</title>
     <meta name="description"
-        content="Sandy Kurnia Ramadhan is a Web & Mobile Developer who builds accessible, inclusive products and digital experiences for the web and mobile.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-    <!-- Boxicons (brand icons) -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <link rel="icon" type="image/png" href="dist/Logodevelopment.png">
+        content="Portofolio Sandy Kurnia Ramadhan, mahasiswa Teknologi Rekayasa Komputer Politeknik Caltex Riau. Aplikasi web, Android, dan desktop dengan Laravel, Kotlin, dan Java; sertifikasi MTCNA; Juara II Cyber CTF PCR 2026.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip" href="#karya">Lompat ke karya</a>
 
-    <!-- ===== HEADER / NAV ===== -->
-    <header class="header" id="header">
-        <div class="nav-container">
-            <a href="#home" class="logo">Portfolio</a>
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="#atas" aria-label="Sandy Kurnia Ramadhan — ke atas">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
 
-            <nav class="navbar" id="navbar">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-
-            <a href="mailto:sandybkng@gmail.com" class="nav-cta">Hire Me</a>
-
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
             </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="#karya" data-nav="karya">Karya</a>
+                <a href="#penghargaan" data-nav="penghargaan">Penghargaan</a>
+                <a href="#rekam-jejak" data-nav="rekam-jejak">Rekam jejak</a>
+                <a href="#kemampuan" data-nav="kemampuan">Kemampuan</a>
+                <a href="#kontak" data-nav="kontak">Kontak</a>
+                <a class="nav__cv" href="dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span aria-hidden="true">↓</span></a>
+            </nav>
         </div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-eyebrow">Web &amp; Mobile Developer</span>
-                <h1 class="hero-title">Sandy Kurnia<br>Ramadhan.</h1>
-                <p class="hero-description">
-                    I build accessible, inclusive products and digital experiences for the web and mobile.
-                    Passionate about creating seamless user interfaces and robust architectures.
+    <main id="atas">
+
+        <!-- ===================== PEMBUKA ===================== -->
+        <section class="opening" aria-labelledby="judul">
+            <div class="shell">
+                <div class="opening__grid">
+                    <div class="opening__text">
+                        <h1 class="display" id="judul">
+                            <span class="line"><span>Saya membangun</span></span>
+                            <span class="line"><span>perangkat lunak,</span></span>
+                            <span class="line"><span>lalu mempelajari</span></span>
+                            <span class="line"><span>cara membobolnya.</span></span>
+                        </h1>
+
+                        <p class="opening__lede">
+                            Mahasiswa Teknologi Rekayasa Komputer di Politeknik Caltex Riau, 2023–2027.
+                            Menulis aplikasi dengan Laravel, Kotlin, dan Java; merawat jaringan lewat
+                            sertifikasi MTCNA; mengasah keamanan aplikasi di kompetisi CTF. Isi halaman ini
+                            adalah buktinya — kode, tangkapan layar, dan tanggal.
+                        </p>
+
+                        <div class="opening__actions">
+                            <a class="btn btn--fill" href="#karya">Lihat karya</a>
+                            <a class="btn btn--line" href="dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>
+                                Unduh CV <span class="btn__meta">PDF, 2 halaman</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <figure class="plate">
+                        <div class="plate__frame">
+                            <img src="dist/Foto.jpg" width="720" height="1080"
+                                alt="Sandy Kurnia Ramadhan di tepi Danau Toba saat senja.">
+                        </div>
+                    </figure>
+                </div>
+
+                <dl class="spec">
+                    <div class="spec__row">
+                        <dt>Jaringan</dt>
+                        <dd>
+                            <span class="spec__value">MTCNA</span>
+                            <span class="spec__meta mono">MikroTik · 2026</span>
+                        </dd>
+                    </div>
+                    <div class="spec__row">
+                        <dt>Keamanan</dt>
+                        <dd>
+                            <span class="spec__value">Juara II Cyber CTF</span>
+                            <span class="spec__meta mono">Politeknik Caltex Riau · 2026</span>
+                        </dd>
+                    </div>
+                    <div class="spec__row">
+                        <dt>Perangkat lunak</dt>
+                        <dd>
+                            <span class="spec__value">Laravel · Kotlin · Java</span>
+                            <span class="spec__meta mono">Web · Android · Desktop</span>
+                        </dd>
+                    </div>
+                    <div class="spec__row">
+                        <dt>Pendidikan</dt>
+                        <dd>
+                            <span class="spec__value">Politeknik Caltex Riau</span>
+                            <span class="spec__meta mono">D4 Teknologi Rekayasa Komputer · IPK 3.52</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ===================== KARYA ===================== -->
+        <section class="section" id="karya" aria-labelledby="judul-karya">
+            <div class="shell">
+                <div class="section__head">
+                    <h2 class="h2" id="judul-karya">Karya</h2>
+                    <p class="section__note mono">6 proyek · 2023–2026</p>
+                </div>
+
+                <div class="filters" role="group" aria-label="Saring proyek berdasarkan platform">
+                    <button class="chip is-on" data-filter="semua" aria-pressed="true">Semua <span
+                            class="chip__n">6</span></button>
+                    <button class="chip" data-filter="web" aria-pressed="false">Web <span
+                            class="chip__n">3</span></button>
+                    <button class="chip" data-filter="mobile" aria-pressed="false">Mobile <span
+                            class="chip__n">1</span></button>
+                    <button class="chip" data-filter="desktop" aria-pressed="false">Desktop <span
+                            class="chip__n">1</span></button>
+                    <button class="chip" data-filter="eksperimen" aria-pressed="false">Eksperimen <span
+                            class="chip__n">1</span></button>
+                </div>
+
+                <p class="filters__status mono" id="filterStatus" role="status" aria-live="polite"></p>
+
+                <ol class="ledger" id="ledger">
+
+                    <li class="entry" data-kind="web">
+                        <a class="entry__link" href="work/finlock.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2026</span>
+                                <span class="entry__kind">Web</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Finlock</h3>
+                                <p class="entry__desc">
+                                    Pencatatan keuangan untuk UMKM: dashboard pemasukan dan pengeluaran,
+                                    transaksi, kategori, laporan, dan autentikasi pengguna.
+                                </p>
+                                <p class="entry__stack mono">Laravel 11 · PHP 8.4 · MySQL · Blade · Tailwind
+                                </p>
+                            </div>
+                            <div class="entry__thumb">
+                                <img src="dist/cases/finlock-transaksi.png" width="1918" height="1014"
+                                    alt="Tangkapan layar halaman transaksi Finlock dengan tabel data keuangan."
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="entry" data-kind="mobile">
+                        <a class="entry__link" href="work/zona-bakat.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2025</span>
+                                <span class="entry__kind">Mobile</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Zona Bakat</h3>
+                                <p class="entry__desc">
+                                    Kursus daring di Android: katalog, pemutar materi, kuis, dan statistik
+                                    progres belajar yang disimpan lokal lewat Room.
+                                </p>
+                                <p class="entry__stack mono">Kotlin · Android Studio · Room · Material</p>
+                            </div>
+                            <div class="entry__thumb entry__thumb--tall">
+                                <img src="dist/cases/zb-course.png" width="1280" height="2856"
+                                    alt="Layar detail kursus Zona Bakat di Android." loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="entry" data-kind="web">
+                        <a class="entry__link" href="work/batik-sawit-nusantara.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2026</span>
+                                <span class="entry__kind">Web</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Batik Sawit Nusantara</h3>
+                                <p class="entry__desc">
+                                    Situs profil rumah batik: navbar dan footer modular, sorotan video proses
+                                    membatik, dan bagian dokumentasi. Sudah tayang.
+                                </p>
+                                <p class="entry__stack mono">HTML · CSS · JavaScript · Vercel</p>
+                            </div>
+                            <div class="entry__thumb">
+                                <img src="dist/cases/batik-beranda.png" width="1440" height="1000"
+                                    alt="Halaman beranda Batik Sawit Nusantara dengan judul besar di atas latar biru tua."
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="entry" data-kind="desktop">
+                        <a class="entry__link" href="work/sumatera-career-center.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2025</span>
+                                <span class="entry__kind">Desktop</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Sumatera Career Center</h3>
+                                <p class="entry__desc">
+                                    Papan lowongan kerja untuk Sumatera di aplikasi desktop Java: cari lowongan,
+                                    unggah lowongan, unggah berkas perusahaan, dengan alur admin.
+                                </p>
+                                <p class="entry__stack mono">Java · XML UI · SQLite/MySQL · Material</p>
+                            </div>
+                            <div class="entry__thumb">
+                                <img src="dist/cases/scc-beranda.png" width="788" height="524"
+                                    alt="Jendela aplikasi Sumatera Career Center dengan daftar lowongan."
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="entry" data-kind="web">
+                        <a class="entry__link" href="work/widjaya-hotel.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2025</span>
+                                <span class="entry__kind">Web</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Widjaya Hotel</h3>
+                                <p class="entry__desc">
+                                    Sistem reservasi hotel dengan 17 halaman: daftar kamar, reservasi, invoice,
+                                    pembayaran, riwayat tamu, dan panel admin.
+                                </p>
+                                <p class="entry__stack mono">PHP · MySQL · Bootstrap · Midtrans</p>
+                            </div>
+                            <div class="entry__thumb">
+                                <img src="dist/cases/widjaya-kamar.png" width="937" height="488"
+                                    alt="Halaman daftar kamar Widjaya Hotel." loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="entry" data-kind="eksperimen">
+                        <a class="entry__link" href="work/flowers.html">
+                            <div class="entry__meta mono">
+                                <span class="entry__year">2023</span>
+                                <span class="entry__kind">Eksperimen</span>
+                            </div>
+                            <div class="entry__body">
+                                <h3 class="entry__title">Bunga di Malam Hari</h3>
+                                <p class="entry__desc">
+                                    Studi animasi murni CSS: bunga yang mekar di latar malam. Tanpa gambar,
+                                    tanpa JavaScript, tanpa pustaka.
+                                </p>
+                                <p class="entry__stack mono">HTML · CSS</p>
+                            </div>
+                            <div class="entry__thumb">
+                                <img src="dist/Bunga_Mekar.jpeg" width="1600" height="768"
+                                    alt="Bunga bercahaya pucat di latar malam gelap, seluruhnya digambar dengan CSS."
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                    </li>
+
+                </ol>
+
+                <p class="ledger__more">
+                    Empat repositori lain ada di <a class="lnk" href="https://github.com/SANDYKURNIIA"
+                        target="_blank" rel="noopener">github.com/SANDYKURNIIA</a>.
                 </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        View Projects <i data-lucide="arrow-right" class="btn-icon"></i>
-                    </a>
-                    <a href="dist/CV_Sandy_Kurnia_Ramadhan.pdf" download="CV_Sandy_Kurnia_Ramadhan.pdf"
-                        class="btn btn-outline">Download CV</a>
-                </div>
             </div>
-            <div class="hero-image">
-                <img src="dist/Foto.jpg" alt="Sandy Kurnia Ramadhan">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image-wrap">
-                    <img src="dist/foto_sandy.jpg" alt="Sandy Kurnia Ramadhan" class="about-photo">
-                    <div class="about-badge">
-                        <span class="badge-num">3+</span>
-                        <span class="badge-label">Years of<br>Experience</span>
-                    </div>
+        <!-- ===================== PENGHARGAAN ===================== -->
+        <section class="section section--ink" id="penghargaan" aria-labelledby="judul-hadiah">
+            <div class="shell">
+                <div class="section__head">
+                    <h2 class="h2" id="judul-hadiah">Penghargaan</h2>
+                    <p class="section__note mono">Dua kompetisi, keduanya 2026</p>
                 </div>
-                <div class="about-content">
-                    <span class="section-eyebrow">About Me</span>
-                    <h2 class="section-title">Crafting digital<br>experiences with code.</h2>
-                    <p class="about-text">
-                        Hello! I'm Sandy, an enthusiastic web and mobile developer currently studying at
-                        Caltex Riau Polytechnic. I'm passionate about building fast, beautiful, and
-                        accessible applications that solve real problems.
-                    </p>
-                    <p class="about-text">
-                        I specialize in frontend development with a keen eye for design, and I love
-                        collaborating on projects that have a meaningful impact on users' lives.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-num">10+</span>
-                            <span class="stat-label">Projects</span>
+
+                <ol class="awards">
+                    <li class="award">
+                        <span class="award__place mono">Juara II</span>
+                        <div class="award__body">
+                            <h3 class="award__title">Cyber CTF — Politeknik Caltex Riau</h3>
+                            <p class="award__note">
+                                Kategori web exploitation, kriptografi, forensik, dan reverse engineering.
+                            </p>
                         </div>
-                        <div class="stat">
-                            <span class="stat-num">5+</span>
-                            <span class="stat-label">Technologies</span>
+                        <span class="award__year mono">2026</span>
+                    </li>
+                    <li class="award">
+                        <span class="award__place mono">Juara III</span>
+                        <div class="award__body">
+                            <h3 class="award__title">IDCloudCamp — IDCloudhost</h3>
+                            <p class="award__note">
+                                Kompetisi komputasi awan yang diselenggarakan IDCloudhost.
+                            </p>
                         </div>
-                        <div class="stat">
-                            <span class="stat-num">100%</span>
-                            <span class="stat-label">Dedication</span>
+                        <span class="award__year mono">2026</span>
+                    </li>
+                </ol>
+
+                <div class="section__head section__head--sub">
+                    <h2 class="h2 h2--sm">Sertifikasi</h2>
+                    <p class="section__note mono">Empat sertifikat, 2025–2026</p>
+                </div>
+
+                <ul class="certs">
+                    <li class="cert">
+                        <span class="cert__year mono">2026</span>
+                        <span class="cert__name">MTCNA — MikroTik Certified Network Associate</span>
+                        <span class="cert__issuer mono">MikroTik</span>
+                    </li>
+                    <li class="cert">
+                        <span class="cert__year mono">2026</span>
+                        <span class="cert__name">Junior Mobile Programmer</span>
+                        <span class="cert__issuer mono">BNSP</span>
+                    </li>
+                    <li class="cert">
+                        <span class="cert__year mono">2025</span>
+                        <span class="cert__name">Red Hat System Administration II (RH134)</span>
+                        <span class="cert__issuer mono">Red Hat</span>
+                    </li>
+                    <li class="cert">
+                        <span class="cert__year mono">2025</span>
+                        <span class="cert__name">Red Hat Academy Program — Learner</span>
+                        <span class="cert__issuer mono">Red Hat</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===================== REKAM JEJAK ===================== -->
+        <section class="section" id="rekam-jejak" aria-labelledby="judul-jejak">
+            <div class="shell">
+                <div class="section__head">
+                    <h2 class="h2" id="judul-jejak">Rekam jejak</h2>
+                    <p class="section__note mono">Empat tahun, urut waktu</p>
+                </div>
+
+                <ol class="timeline">
+                    <li class="timeline__row">
+                        <span class="timeline__year mono">2023</span>
+                        <div class="timeline__body">
+                            <p class="timeline__title">Mulai kuliah di Politeknik Caltex Riau</p>
+                            <p class="timeline__note">
+                                Program D4 Teknologi Rekayasa Komputer, lulus 2027 dengan IPK 3.52.
+                                Proyek pertama di repositori: eksperimen animasi CSS
+                                <a class="lnk" href="work/flowers.html">Bunga di Malam Hari</a>.
+                            </p>
                         </div>
+                    </li>
+                    <li class="timeline__row">
+                        <span class="timeline__year mono">2025</span>
+                        <div class="timeline__body">
+                            <p class="timeline__title">Red Hat, lalu tiga aplikasi</p>
+                            <p class="timeline__note">
+                                Menyelesaikan Red Hat System Administration II (RH134) dan Red Hat Academy
+                                Program. Di tahun yang sama membangun
+                                <a class="lnk" href="work/sumatera-career-center.html">Sumatera Career Center</a>
+                                (Java), <a class="lnk" href="work/zona-bakat.html">Zona Bakat</a> (Kotlin), dan
+                                <a class="lnk" href="work/widjaya-hotel.html">Widjaya Hotel</a> (PHP).
+                            </p>
+                        </div>
+                    </li>
+                    <li class="timeline__row">
+                        <span class="timeline__year mono">2026</span>
+                        <div class="timeline__body">
+                            <p class="timeline__title">Jaringan, sertifikasi, dua podium</p>
+                            <p class="timeline__note">
+                                MTCNA dari MikroTik dan Junior Mobile Programmer dari BNSP. Juara III
+                                IDCloudCamp oleh IDCloudhost, lalu Juara II Cyber CTF Politeknik Caltex Riau.
+                                Proyek: <a class="lnk" href="work/finlock.html">Finlock</a> dan
+                                <a class="lnk" href="work/batik-sawit-nusantara.html">Batik Sawit Nusantara</a>.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="timeline__row">
+                        <span class="timeline__year mono">2027</span>
+                        <div class="timeline__body">
+                            <p class="timeline__title">Rencana kelulusan</p>
+                            <p class="timeline__note">Belum berjalan — dicantumkan supaya urutannya utuh.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="orgs">
+                    <h3 class="orgs__head mono">Organisasi</h3>
+                    <ul>
+                        <li><span class="orgs__name">Badan Legislatif Mahasiswa — Komisi 5</span> <span
+                                class="orgs__role">Advokasi dan aspirasi mahasiswa</span></li>
+                        <li><span class="orgs__name">HIMAKOM</span> <span class="orgs__role">Himpunan mahasiswa
+                                program studi</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== KEMAMPUAN ===================== -->
+        <section class="section" id="kemampuan" aria-labelledby="judul-kemampuan">
+            <div class="shell">
+                <div class="section__head">
+                    <h2 class="h2" id="judul-kemampuan">Kemampuan</h2>
+                    <p class="section__note mono">Yang dipakai di proyek dan di lomba</p>
+                </div>
+
+                <div class="skills">
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Bahasa</h3>
+                        <p class="skills__value">PHP · Java · Kotlin · Python · C · JavaScript · HTML/CSS</p>
                     </div>
-                    <div class="about-links">
-                        <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
-                            class="social-link">
-                            <i class="bx bxl-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/SANDYKURNIIA" target="_blank" class="social-link">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sandykurniia_/" target="_blank" class="social-link">
-                            <i class="bx bxl-instagram-alt"></i>
-                        </a>
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Kerangka &amp; SDK</h3>
+                        <p class="skills__value">Laravel · Android SDK · Bootstrap · Tailwind CSS</p>
+                    </div>
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Data</h3>
+                        <p class="skills__value">MySQL · SQLite · Room · MongoDB Atlas · Firebase</p>
+                    </div>
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Jaringan</h3>
+                        <p class="skills__value">TCP/IP · Routing · NAT · Firewall · MikroTik RouterOS</p>
+                    </div>
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Keamanan</h3>
+                        <p class="skills__value">Web exploitation · Kriptografi · Forensik · Reverse engineering</p>
+                    </div>
+                    <div class="skills__row">
+                        <h3 class="skills__label mono">Alat</h3>
+                        <p class="skills__value">Git · Android Studio · NetBeans · Red Hat Enterprise Linux</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== SKILLS SECTION ===== -->
-    <section class="skills section" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Skills</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="skills-grid reveal-stagger">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i data-lucide="monitor"></i>
-                    </div>
-                    <h3 class="skill-title">Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Larravel</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">Bootstrap</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i data-lucide="smartphone"></i>
-                    </div>
-                    <h3 class="skill-title">Mobile Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Kotlin</span>
-                        <span class="tag">Android</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section class="projects section" id="projects">
-        <div class="container">
-            <div class="projects-header">
-                <div>
-                    <h2 class="section-title">Selected Work</h2>
-                    <div class="section-line"></div>
-                </div>
-                <a href="https://github.com/SANDYKURNIIA" target="_blank" class="view-all">
-                    View All Projects <i data-lucide="arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="projects-grid reveal-stagger">
-
-                <!-- Project 1 -->
-                <article class="project-card featured">
-                    <div class="project-img-wrap">
-                        <img src="dist/Dashboard-UMKM.png" alt="Pencatatan Keuangan" class="project-img">
-                        <div class="project-overlay">
-                            <a href="https://github.com/SANDYKURNIIA/Finlock-Aplikasi-Pencatatan-Keuangan"
-                                target="_blank" class="project-link">
-                                <i data-lucide="external-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="ptag ptag-web">Web App</span>
-                            <span class="ptag">Laravel</span>
-                        </div>
-                        <h3 class="project-title">Catatan Keuangan</h3>
-                        <p class="project-desc">
-                            A secure and intuitive financial management web application built with Laravel. It features
-                            comprehensive expense tracking, income management, and detailed dashboard visualizations to
-                            help users monitor their financial health effectively
+        <!-- ===================== KONTAK ===================== -->
+        <section class="section section--contact" id="kontak" aria-labelledby="judul-kontak">
+            <div class="shell">
+                <div class="contact">
+                    <div class="contact__side">
+                        <h2 class="h2" id="judul-kontak">Kirim pesan singkat, saya balas.</h2>
+                        <p class="contact__lede">
+                            Untuk tawaran magang, proyek, atau pertanyaan soal salah satu karya di halaman ini.
                         </p>
-                        <a href="https://github.com/SANDYKURNIIA/Finlock-Aplikasi-Pencatatan-Keuangan" target="_blank"
-                            class="case-link">
-                            View Case Study <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-                <!-- Project 2 -->
-                <article class="project-card featured">
-                    <div class="project-img-wrap">
-                        <img src="dist/SCC.png" alt="SCC Dashboard" class="project-img">
-                        <div class="project-overlay">
-                            <a href="https://github.com/SANDYKURNIIA/SumateraCareerCenter" target="_blank"
-                                class="project-link">
-                                <i data-lucide="external-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="ptag ptag-web">Desktop App</span>
-                            <span class="ptag">Java</span>
-                        </div>
-                        <h3 class="project-title">SCC Dashboard</h3>
-                        <p class="project-desc">
-                            A comprehensive management dashboard built with React and Tailwind CSS,
-                            featuring complex data visualization and real-time...
-                        </p>
-                        <a href="https://github.com/SANDYKURNIIA/SumateraCareerCenter" target="_blank"
-                            class="case-link">
-                            View Case Study <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
 
-                <!-- Project 3 -->
-                <article class="project-card featured">
-                    <div class="project-img-wrap">
-                        <img src="dist/Zona_Bakat_Apps.png" alt="Zona Bakat Mobile App" class="project-img">
-                        <div class="project-overlay">
-                            <a href="https://github.com/SANDYKURNIIA/ZonaBakatApps" target="_blank"
-                                class="project-link">
-                                <i data-lucide="external-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="ptag ptag-mobile">Mobile App</span>
-                            <span class="ptag">Kotlin</span>
-                        </div>
-                        <h3 class="project-title">Zona Bakat Apps</h3>
-                        <p class="project-desc">
-                            A cross-platform mobile application offering intuitive course selection
-                            flows, engaging UI, and personalized learning insights.
-                        </p>
-                        <a href="https://github.com/SANDYKURNIIA/ZonaBakatApps" target="_blank" class="case-link">
-                            View Case Study <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="project-card">
-                    <div class="project-img-wrap">
-                        <img src="dist/Reservasi.png" alt="Widjaya Hotel Reservation" class="project-img">
-                        <div class="project-overlay">
-                            <a href="https://github.com/SANDYKURNIIA/ReservasiHotel" target="_blank"
-                                class="project-link">
-                                <i data-lucide="external-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="ptag ptag-web">Web App</span>
-                            <span class="ptag">PHP</span>
-                        </div>
-                        <h3 class="project-title">Widjaya Hotel</h3>
-                        <p class="project-desc">
-                            Hotel reservation platform with real-time room availability and booking management.
-                        </p>
-                        <a href="https://github.com/SANDYKURNIIA/ReservasiHotel" target="_blank" class="case-link">
-                            View Case Study <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project 5 -->
-                <article class="project-card">
-                    <div class="project-img-wrap">
-                        <img src="dist/Bunga_Mekar.jpeg" alt="Flowers Website" class="project-img">
-                        <div class="project-overlay">
-                            <a href="https://github.com/SANDYKURNIIA/Flowers" target="_blank" class="project-link">
-                                <i data-lucide="external-link"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="ptag ptag-web">Web App</span>
-                            <span class="ptag">HTML/CSS</span>
-                        </div>
-                        <h3 class="project-title">Bunga Mekar</h3>
-                        <p class="project-desc">
-                            A beautifully designed flower display website with elegant UI and smooth animations.
-                        </p>
-                        <a href="https://github.com/SANDYKURNIIA/Flowers" target="_blank" class="case-link">
-                            View Case Study <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="contact-grid reveal">
-                <div class="contact-info">
-                    <span class="section-eyebrow">Get In Touch</span>
-                    <h2 class="section-title">Let's work<br>together.</h2>
-                    <p class="contact-text">
-                        Have a project in mind or just want to say hello?
-                        I'd love to hear from you. Send me a message and
-                        I'll get back to you as soon as possible.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i data-lucide="mail"></i>
-                            <span>sandybkng@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i data-lucide="map-pin"></i>
-                            <span>Pekanbaru, Riau, Indonesia</span>
-                        </div>
-                    </div>
-                    <div class="contact-socials">
-                        <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
-                            class="social-link">
-                            <i class="bx bxl-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/SANDYKURNIIA" target="_blank" class="social-link">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sandykurniia_/" target="_blank" class="social-link">
-                            <i class="bx bxl-instagram-alt"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrap">
-                    <form id="contactForm" action="https://formspree.io/f/xanbvelg" method="post" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Sandy Kurnia" required>
+                        <dl class="contact__list">
+                            <div>
+                                <dt class="mono">Email</dt>
+                                <dd><a class="lnk" href="mailto:sandybkng@gmail.com">sandybkng@gmail.com</a></dd>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+                            <div>
+                                <dt class="mono">Telepon</dt>
+                                <dd><a class="lnk" href="tel:+6281363032647">0813 6303 2647</a></dd>
                             </div>
+                            <div>
+                                <dt class="mono">Lokasi</dt>
+                                <dd>Rumbai, Pekanbaru, Riau</dd>
+                            </div>
+                            <div>
+                                <dt class="mono">Di tempat lain</dt>
+                                <dd class="contact__social">
+                                    <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank"
+                                        rel="noopener">GitHub</a>
+                                    <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/"
+                                        target="_blank" rel="noopener">LinkedIn</a>
+                                    <a class="lnk" href="https://www.instagram.com/sandykurniia_/" target="_blank"
+                                        rel="noopener">Instagram</a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <form class="form" id="contactForm" action="https://formspree.io/f/xanbvelg" method="post"
+                        novalidate>
+                        <div class="field">
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" name="nama" autocomplete="name" required
+                                aria-describedby="err-nama">
+                            <p class="field__error mono" id="err-nama" hidden></p>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+
+                        <div class="field">
+                            <label for="surel">Email</label>
+                            <input type="email" id="surel" name="email" autocomplete="email" required
+                                aria-describedby="err-surel">
+                            <p class="field__error mono" id="err-surel" hidden></p>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
-                                required></textarea>
+
+                        <div class="field">
+                            <label for="subjek">Subjek</label>
+                            <input type="text" id="subjek" name="subjek" required aria-describedby="err-subjek">
+                            <p class="field__error mono" id="err-subjek" hidden></p>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            Send Message <i data-lucide="send" class="btn-icon"></i>
+
+                        <div class="field">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" name="pesan" rows="5" required aria-describedby="err-pesan"></textarea>
+                            <p class="field__error mono" id="err-pesan" hidden></p>
+                        </div>
+
+                        <button class="btn btn--fill btn--send" type="submit" id="sendBtn">
+                            <span class="btn__label">Kirim pesan</span>
                         </button>
+
+                        <p class="form__status mono" id="formStatus" role="status" aria-live="polite"></p>
+                        <p class="form__fine">
+                            Formulir ini dikirim lewat Formspree. Tidak ada data yang disimpan di situs ini.
+                        </p>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <span class="footer-logo">Portfolio</span>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/SANDYKURNIIA" target="_blank">GitHub</a>
-                <a href="https://www.instagram.com/sandykurniia_/" target="_blank">Instagram</a>
-            </div>
-            <p class="footer-copy">&copy; 2024 Sandy Kurnia Ramadhan. Built with Modern Authority.</p>
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
         </div>
     </footer>
 

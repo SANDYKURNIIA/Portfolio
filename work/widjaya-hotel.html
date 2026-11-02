@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widjaya Hotel — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Widjaya Hotel: sistem reservasi hotel PHP native dengan MySQL, Bootstrap, dan pembayaran Midtrans.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Widjaya
+                    Hotel</p>
+
+                <h1 class="case__title" id="judul">Widjaya Hotel</h1>
+
+                <p class="case__lede">
+                    Sistem reservasi hotel dengan 17 halaman: daftar kamar, pemesanan, invoice,
+                    pembayaran daring, riwayat tamu, dan panel admin untuk mengelola semuanya.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2025</dd>
+                    </div>
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>Web</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>PHP native · Bootstrap</dd>
+                    </div>
+                    <div>
+                        <dt>Pembayaran</dt>
+                        <dd>Midtrans</dd>
+                    </div>
+                </dl>
+
+                <div class="case__shots">
+                    <figure class="case__shot">
+                        <img src="../dist/cases/widjaya-beranda.png" width="937" height="488"
+                            alt="Beranda Widjaya Hotel dengan informasi umum hotel dan akses ke fitur reservasi."
+                            loading="lazy" decoding="async">
+                        <figcaption class="mono">Beranda.</figcaption>
+                    </figure>
+                    <figure class="case__shot">
+                        <img src="../dist/cases/widjaya-kamar.png" width="929" height="483"
+                            alt="Halaman daftar kamar Widjaya Hotel dengan foto, harga, dan tombol pesan."
+                            loading="lazy" decoding="async">
+                        <figcaption class="mono">Daftar kamar.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Masalahnya</h2>
+                        <p>
+                            Reservasi lewat pesan pribadi membuat status kamar tidak pernah pasti: siapa
+                            sudah membayar, kamar mana yang masih kosong, dan berapa transaksi yang
+                            dibatalkan. Semua pertanyaan itu hanya bisa dijawab kalau pemesanan dan
+                            pembayaran berada di sistem yang sama.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Galeri kamar dengan foto, harga, fasilitas, dan status ketersediaan.</li>
+                            <li>Formulir reservasi: pilihan tanggal, jumlah tamu, dan tipe kamar.</li>
+                            <li>Pembayaran melalui Midtrans, dengan invoice yang dihasilkan setelah
+                                transaksi berhasil.</li>
+                            <li>Halaman konfirmasi bagi admin untuk memverifikasi reservasi.</li>
+                            <li>Dashboard admin berisi statistik reservasi, status kamar, dan transaksi.</li>
+                            <li>Pengelolaan data pengguna dan riwayat reservasi.</li>
+                            <li>Daftar transaksi berhasil dan dibatalkan.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>PHP native, tanpa framework.</strong> Tujuannya memahami alur request,
+                            sesi, dan query secara langsung sebelum menyerahkannya ke framework. Konsekuensinya,
+                            struktur folder dan penamaan harus disiplin sendiri — dan itu bagian yang paling
+                            banyak mengajari saya.
+                        </p>
+                        <p>
+                            <strong>Midtrans sebagai pintu pembayaran.</strong> Sistem tidak pernah menyimpan
+                            data kartu. Yang disimpan adalah status transaksi yang dikembalikan penyedia
+                            pembayaran, lalu dipetakan ke status reservasi.
+                        </p>
+                        <p>
+                            <strong>Dua jalur masuk: tamu dan admin.</strong> Halaman tamu dan panel admin
+                            dipisahkan sejak awal, dengan sesi berbeda, agar tidak ada satu pun layar admin
+                            yang bisa dicapai tanpa masuk sebagai admin.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Status adalah inti sistem reservasi. Satu reservasi melewati beberapa keadaan —
+                            diajukan, dibayar, dikonfirmasi, selesai, atau dibatalkan — dan setiap layar
+                            harus tahu keadaan mana yang sedang berlaku. Ini pelajaran yang kemudian saya
+                            bawa ke proyek berikutnya.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono"><a class="lnk" href="https://github.com/SANDYKURNIIA/ReservasiHotel"
+                            target="_blank" rel="noopener">Repositori di GitHub ↗</a></span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

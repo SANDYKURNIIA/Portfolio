@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona Bakat — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Zona Bakat: aplikasi kursus daring Android dengan Kotlin, Android Studio, Room, dan Material Design.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Zona Bakat
+                </p>
+
+                <h1 class="case__title" id="judul">Zona Bakat</h1>
+
+                <p class="case__lede">
+                    Aplikasi kursus daring di Android: katalog materi, pemutar pelajaran, kuis, dan
+                    statistik progres yang tetap ada setelah aplikasi ditutup.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2025</dd>
+                    </div>
+                    <div>
+                        <dt>Platform</dt>
+                        <dd>Android</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>Kotlin · Android SDK</dd>
+                    </div>
+                    <div>
+                        <dt>Data</dt>
+                        <dd>Room (SQLite lokal)</dd>
+                    </div>
+                </dl>
+
+                <div class="case__shots case__shots--phones">
+                    <figure class="case__shot case__shot--tall">
+                        <img src="../dist/cases/zb-course.png" width="1280" height="2856"
+                            alt="Layar detail kursus Zona Bakat: judul materi, video pembelajaran, dan daftar isi kursus."
+                            loading="lazy" decoding="async">
+                        <figcaption class="mono">Detail kursus</figcaption>
+                    </figure>
+                    <figure class="case__shot case__shot--tall">
+                        <img src="../dist/cases/zb-quiz.png" width="1280" height="2856"
+                            alt="Layar kuis Zona Bakat dengan pertanyaan pilihan ganda." loading="lazy" decoding="async">
+                        <figcaption class="mono">Kuis</figcaption>
+                    </figure>
+                    <figure class="case__shot case__shot--tall">
+                        <img src="../dist/cases/zb-statistik.png" width="1280" height="2856"
+                            alt="Layar statistik Zona Bakat menampilkan persentase dan grafik progres belajar."
+                            loading="lazy" decoding="async">
+                        <figcaption class="mono">Statistik progres</figcaption>
+                    </figure>
+                </div>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Masalahnya</h2>
+                        <p>
+                            Kursus daring biasanya menuntut koneksi stabil dan akun terpusat. Zona Bakat
+                            mengambil arah lain: materi dan progres disimpan di perangkat, sehingga
+                            belajar tetap berjalan saat sinyal buruk.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Dashboard berisi daftar kursus yang tersedia beserta kategori materi.</li>
+                            <li>Halaman detail kursus: video pembelajaran, deskripsi, dan daftar konten.</li>
+                            <li>Kuis pilihan ganda sebagai evaluasi setelah materi selesai.</li>
+                            <li>Pelacakan progres dalam bentuk persentase dan grafik.</li>
+                            <li>Halaman profil pengguna dengan ringkasan aktivitas belajar.</li>
+                            <li>Login untuk memisahkan data antar pengguna.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>Room, bukan API daring.</strong> Progres belajar adalah data yang paling
+                            sering dibaca dan paling jarang diubah. Menyimpannya di SQLite lokal lewat Room
+                            membuat statistik terbuka seketika, tanpa menunggu jaringan. Room juga memberi
+                            pemeriksaan query saat kompilasi, jadi kesalahan nama kolom ketahuan sebelum
+                            aplikasi dijalankan.
+                        </p>
+                        <p>
+                            <strong>Material Design sebagai batasan, bukan hiasan.</strong> Komponen bawaan
+                            Android dipakai apa adanya agar navigasi terasa familiar bagi pengguna yang
+                            baru pertama membuka aplikasi.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Menyimpan progres terdengar sederhana sampai harus menjawab: apa yang terjadi
+                            kalau pengguna menutup aplikasi di tengah kuis. Menentukan kapan progres
+                            ditulis — per jawaban atau per sesi — mengubah seluruh alur layar kuis.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono"><a class="lnk" href="https://github.com/SANDYKURNIIA/ZonaBakatApps"
+                            target="_blank" rel="noopener">Repositori di GitHub ↗</a></span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

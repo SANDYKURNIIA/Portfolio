@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunga di Malam Hari — Sandy Kurnia Ramadhan</title>
+    <meta name="description"
+        content="Studi kasus Bunga di Malam Hari: animasi bunga mekar yang digambar sepenuhnya dengan CSS, tanpa gambar dan tanpa pustaka.">
+    <meta name="theme-color" content="#f1f1ee">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../fonts/schibsted-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a class="skip" href="#isi">Lompat ke isi</a>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="mark" href="../index.html" aria-label="Sandy Kurnia Ramadhan — beranda">
+                <span class="mark__initials">SKR</span>
+                <span class="mark__name">Sandy Kurnia Ramadhan</span>
+            </a>
+
+            <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+                <span></span><span></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Utama">
+                <a href="../index.html#karya">Karya</a>
+                <a href="../index.html#penghargaan">Penghargaan</a>
+                <a href="../index.html#rekam-jejak">Rekam jejak</a>
+                <a href="../index.html#kemampuan">Kemampuan</a>
+                <a href="../index.html#kontak">Kontak</a>
+                <a class="nav__cv" href="../dist/CV_Sandy_Kurnia_Ramadhan.pdf" download>CV <span
+                        aria-hidden="true">↓</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="isi">
+        <article class="case" aria-labelledby="judul">
+            <div class="shell">
+                <p class="case__crumb mono"><a class="lnk" href="../index.html#karya">Karya</a><span>/</span>Bunga di
+                    Malam Hari</p>
+
+                <h1 class="case__title" id="judul">Bunga di Malam Hari</h1>
+
+                <p class="case__lede">
+                    Studi animasi: sekuntum bunga mekar perlahan di latar malam. Tidak ada berkas gambar,
+                    tidak ada pustaka — seluruh bentuknya digambar dengan CSS.
+                </p>
+
+                <dl class="case__facts">
+                    <div>
+                        <dt>Tahun</dt>
+                        <dd>2023</dd>
+                    </div>
+                    <div>
+                        <dt>Jenis</dt>
+                        <dd>Eksperimen</dd>
+                    </div>
+                    <div>
+                        <dt>Tumpukan</dt>
+                        <dd>HTML · CSS</dd>
+                    </div>
+                    <div>
+                        <dt>Dependensi</dt>
+                        <dd>Tidak ada</dd>
+                    </div>
+                </dl>
+
+                <figure class="case__shot">
+                    <img src="../dist/Bunga_Mekar.jpeg" width="1600" height="768"
+                        alt="Bunga bercahaya pucat yang mekar di latar malam gelap, seluruhnya dibentuk dengan CSS."
+                        loading="lazy" decoding="async">
+                    <figcaption class="mono">Hasil akhir — kelopak, batang, dan cahaya dibentuk dengan CSS.</figcaption>
+                </figure>
+
+                <div class="case__body">
+                    <section class="case__block">
+                        <h2>Kenapa dibuat</h2>
+                        <p>
+                            Latihan untuk memahami sejauh mana CSS bisa menggantikan gambar. Satu berkas
+                            gambar jadi menuntut ukuran piksel, format, dan bobot unduhan; bentuk yang
+                            dibangun dengan CSS menyesuaikan diri dengan layar apa pun.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang dibangun</h2>
+                        <ul class="case__list">
+                            <li>Kelopak bunga disusun dari elemen yang diputar dan diberi bayangan.</li>
+                            <li>Animasi mekar bertahap, dengan tiap kelopak punya waktu dan arah sendiri.</li>
+                            <li>Batang dan daun yang tumbuh setelah kelopak terbuka.</li>
+                            <li>Latar malam dengan cahaya lembut di sekitar bunga.</li>
+                            <li>Animasi dimulai setelah halaman siap, supaya bunga tidak mekar di luar layar.</li>
+                        </ul>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Keputusan teknis</h2>
+                        <p>
+                            <strong>Transform dan opacity saja.</strong> Hanya dua properti itu yang dianimasikan,
+                            karena keduanya bisa dijalankan di GPU tanpa memicu perhitungan ulang tata letak.
+                            Setiap kelopak tetap berbentuk sama sepanjang animasi; yang berubah hanya posisi,
+                            rotasi, dan transparansinya.
+                        </p>
+                        <p>
+                            <strong>Satu kelas sebagai pemicu.</strong> Alih-alih menulis ulang animasi, seluruh
+                            urutan ditahan oleh satu kelas di elemen <code>body</code> yang dilepas setelah
+                            halaman selesai dimuat. Membatalkan atau mengulang animasi cukup dengan mengubah
+                            satu kelas, bukan setiap elemen.
+                        </p>
+                    </section>
+
+                    <section class="case__block">
+                        <h2>Yang saya pelajari</h2>
+                        <p>
+                            Panjang animasi menentukan kesan. Dengan waktu yang salah, mekarnya bunga terasa
+                            seperti glitch, bukan pertumbuhan. Menyetel jeda antar kelopak ternyata sama
+                            pentingnya dengan bentuk kelopaknya sendiri.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="case__foot">
+                    <a class="lnk" href="../index.html#karya">← Semua karya</a>
+                    <span class="mono"><a class="lnk" href="https://github.com/SANDYKURNIIA/Flowers" target="_blank"
+                            rel="noopener">Repositori di GitHub ↗</a></span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="foot">
+        <div class="shell foot__inner">
+            <p class="foot__id">
+                <span class="mono">SKR</span> Sandy Kurnia Ramadhan — Rumbai, Pekanbaru
+            </p>
+            <p class="foot__meta mono">
+                <a class="lnk" href="https://github.com/SANDYKURNIIA" target="_blank" rel="noopener">GitHub</a>
+                <a class="lnk" href="https://www.linkedin.com/in/sandy-kurnia-ramadhan-703995280/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <span>&copy; 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
